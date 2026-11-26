@@ -2,10 +2,7 @@
 
 Build and run your own datacentre. Start with an empty room and a bit of cash, then lay out racks, power, cooling and networking, sign customers, hire staff and keep everything from catching fire.
 
-**Play it in the browser:** [tycoon.apexstudio.dev](https://tycoon.apexstudio.dev)
 **Desktop app:** Windows, macOS and Linux installers are published from the [releases repository](https://github.com/maxhoylestrode/datacentre-tycoon-releases).
-
-![The All racks panel over the live datacentre floor](overhaul-screenshots/curated/phase5/1920x1080-30-panel-racks.jpg)
 
 ---
 
