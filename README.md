@@ -66,48 +66,6 @@ The in-game guide (press **G**) has the full rundown of every system, and it's t
 
 On a phone: drag with one finger to look around, pinch to zoom, and swipe the bottom bar sideways for more buttons.
 
-## Running it locally
-
-You need [Node.js](https://nodejs.org) 22 or newer.
-
-```bash
-git clone https://github.com/maxhoylestrode/DataCentre-Tycoon.git
-cd DataCentre-Tycoon
-npm install
-npm run dev
-```
-
-Then open the address Vite prints in the terminal.
-
-### Other scripts
-
-| Command | What it does |
-|---|---|
-| `npm run dev` | Dev server with hot reload |
-| `npm run build` | Type-check and build the web game into `dist/` |
-| `npm run preview` | Serve the production build locally |
-| `npm test` | Run the test suite with Vitest |
-| `npm run test:watch` | Run the tests in watch mode |
-| `npm run desktop` | Build and launch the Electron desktop app |
-| `npm run dist:desktop` | Build installers with electron-builder |
-
-## Project layout
-
-```
-src/
-  sim/        Pure TypeScript simulation. No Three.js or DOM imports.
-    content/  Data only: tiers, unlocks, goals, achievements, scenarios, parts.
-  render/     Three.js rendering. Reads game state, never changes it.
-  input/      Mouse, keyboard and touch. Turns input into sim commands.
-  ui/         HUD, panels, dialogs and the guide. Plain DOM, no UI framework.
-  io/         Save storage and update checks.
-  main.ts     Wires everything together.
-electron/     Desktop app shell (main process, preload, save files, window state).
-tests/        Vitest tests, mostly for the simulation.
-docs/         Notes for contributors, including ADDING_CONTENT.md.
-```
-
-The split is deliberate. The simulation is headless and tested on its own, and the renderer and UI only send commands to it. Balance numbers live in `src/config.ts`.
 
 Want to add content? Tiers, unlocks, goals and achievements are plain data in `src/sim/content/`. [docs/ADDING_CONTENT.md](docs/ADDING_CONTENT.md) explains how, and `npm test` checks every entry.
 
@@ -122,10 +80,6 @@ There are no image, model or audio files to license. Everything is built in code
 - Fonts are Inter and Rajdhani, both under the SIL Open Font License 1.1.
 
 [ASSETS.md](ASSETS.md) lists every asset and where it came from. Hardware part names such as CPUs and GPUs are trademarks of their owners, and the game says so.
-
-## Releases
-
-The web version deploys from `main` to GitHub Pages. Desktop builds are made by GitHub Actions and published to a separate public repository, which is where the app checks for updates. The steps are in [RELEASING.md](RELEASING.md).
 
 ## Credits
 
